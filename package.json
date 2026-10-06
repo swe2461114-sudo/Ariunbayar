@@ -1,0 +1,19 @@
+{
+  "name": "spamfcd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss/main.scss src/css/main.css",
+    "build:css": "sass --quiet-deps src/scss/main.scss src/css/main.css",
+    "generate:images": "node src/tools/generate-images-json.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^7.3.1",
+    "bulma": "^1.0.4",
+    "sass": "^1.105.0"
+  }
+}

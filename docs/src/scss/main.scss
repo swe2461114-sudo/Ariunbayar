@@ -1,0 +1,103 @@
+@use "sass:color";
+
+// variables
+$primaryColor: #2bac73;
+$primaryColorDark: color.scale($primaryColor, $lightness: -15%);
+
+$secondaryColor: #ff914d;
+$secondaryColorDark: color.scale($secondaryColor, $lightness: -15%);
+
+:root {
+  --border: #ececf2;
+  --sidebar-width: clamp(280px, 22vw, 340px);
+  --sidebar-bg: #ffffff;
+  --page-bg: #ffffff;
+  --text-main: #23262f;
+  --text-soft: #6b7280;
+  --pink: #ff6f91;
+  --green: #2bac73;
+  --orange: #ff914d;
+  --active-bg: #fff2e8;
+  --hover-bg: #f7f7fa;
+  --overlay: rgba(15, 23, 42, 0.55);
+}
+
+@import "../../node_modules/bulma/bulma";
+
+@import "./components/buttons";
+@import "./components/navbar";
+@import "./layouts/sidebarPageLayout";
+@import "./components/sidebarMenuList";
+@import "./layouts/pageTableContentsLayout";
+@import "./components/imageModal";
+
+/* =========================
+  DESKTOP (>=769px)
+========================= */
+@media screen and (min-width: 769px) {
+  .app-mobile-sidebar,
+  .app-sidebar-mobile-head {
+    display: none;
+  }
+  .app-sidebar {
+    position: static;
+    transform: none;
+    height: auto;
+    box-shadow: none;
+  }
+}
+
+/* =========================
+  TABLET (<=1024px)
+========================= */
+@media screen and (max-width: 1023px) {
+  .app-title { line-height: 1.1; margin-bottom: 0.9rem; }
+  .app-subtitle { margin-bottom: 2rem; }
+  .app-tbl { font-size: 0.9rem; }
+}
+
+/* =========================
+  MOBILE (<=768px)
+========================= */
+@media screen and (max-width: 768px) {
+  .app-shell { display: block; }
+  .app-mobile-sidebar { display: block; }
+
+  .app-sidebar {
+    display: block;
+    position: fixed;
+    top: 0; left: 0;
+    width: 320px;
+    max-width: 85vw;
+    min-width: unset;
+    height: 100vh;
+    z-index: 40;
+    background: #fff;
+    border-right: 1px solid var(--border);
+    border-bottom: 0;
+    padding: 1rem 1rem 2rem;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.28s ease;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.14);
+  }
+  .app-sidebar.is-open { transform: translateX(0); }
+
+  .app-sidebar-mobile-head {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.75rem;
+  }
+
+  .app-title { font-size: 1.65rem; line-height: 1.15; }
+  .app-subtitle { font-size: 1rem; line-height: 1.5; margin-bottom: 1.75rem; }
+  .app-tbl { font-size: 0.7rem; }
+}
+
+/* =========================
+  SMALL MOBILE (<=480px)
+========================= */
+@media screen and (max-width: 480px) {
+  .app-title { font-size: 1.45rem; }
+  .app-subtitle { font-size: 0.95rem; }
+}
