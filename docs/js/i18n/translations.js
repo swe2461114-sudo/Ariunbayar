@@ -14,6 +14,13 @@ export const translations = {
       title: "Тойм",
       welcome: "Тойм хуудсанд тавтай морил.",
     },
+    searchPage: {
+      title: "Хүнсний найрлагын мэдээллийн сан",
+    },
+    notification: {
+      loadingData: "Өгөгдөл ачааллаж байна...",
+      failedToLoadNutritionData: "Хүнсний найрлагын өгөгдлийг ачааллахад алдаа гарлаа.",
+    },
   },
   en: {
     nav: {
@@ -29,6 +36,13 @@ export const translations = {
     overview: {
       title: "Overview",
       welcome: "Welcome to the overview page.",
+    },
+    searchPage: {
+      title: "Food Composition Database",
+    },
+    notification: {
+      loadingData: "Loading data...",
+      failedToLoadNutritionData: "Failed to load nutrition data.",
     },
   },
 };
